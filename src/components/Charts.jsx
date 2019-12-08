@@ -13,7 +13,7 @@ const Charts = ({ coin, coinsData }) => {
           <div className="coin__logo">
             <img src={(coin.image) ? coin.image.small : null} height="40" alt={coin.name} />
           </div>
-          {(sparkline[0] !== undefined) ? <Chart sparklineData={sparkline[0].sparkline_in_7d.price} /> : null}
+          {(sparkline[0] !== undefined) ? <Chart sparklineData={sparkline[0].sparkline_in_7d.price}  /> : null}
         </div>
     </div>
   );
