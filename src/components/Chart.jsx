@@ -35,7 +35,6 @@ const Chart = ({ sparklineData }) => {
       <div className="line">
        <Line type="monotone" dataKey="value" stroke='#888' />
       </div>
-      
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
