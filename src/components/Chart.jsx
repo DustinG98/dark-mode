@@ -32,7 +32,7 @@ const Chart = ({ sparklineData }) => {
     .filter(data => data);
 
   return (
-    <ResponsiveContainer width='95%' height='40%' minWidth={300} minHeight={200}>
+    <ResponsiveContainer width='80%' height='40%' minWidth={300} minHeight={200}>
       <LineChart data={formattedData} >
         <Line type="monotone" dataKey="value" stroke='#888' />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
