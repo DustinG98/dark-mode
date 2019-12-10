@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import {
   LineChart,
@@ -6,7 +6,8 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  Tooltip
+  Tooltip,
+  ResponsiveContainer
 } from "recharts";
 
 
@@ -29,15 +30,17 @@ const Chart = ({ sparklineData }) => {
       return null;
     })
     .filter(data => data);
-  
+
   return (
-    <LineChart width={1100} height={300} data={formattedData}>
-       <Line type="monotone" dataKey="value" stroke='#888' />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey="date" interval={3} />
-      <YAxis />
-      <Tooltip />
-    </LineChart>
+    <ResponsiveContainer width='95%' height='40%' minWidth={300} minHeight={200}>
+      <LineChart data={formattedData} >
+        <Line type="monotone" dataKey="value" stroke='#888' />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        <XAxis dataKey="date" interval={"preserveStartEnd"}/>
+        <YAxis />
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
   );
 };
 
